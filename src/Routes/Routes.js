@@ -3,6 +3,7 @@ import {
     createBrowserRouter,
 
 } from "react-router-dom";
+import Blog from "../AllPage/Blog/Blog";
 import CategoryList from "../AllPage/CategoryList/CategoryList";
 import Courses from "../AllPage/Courses/Courses";
 import Home from "../AllPage/Home/Home";
@@ -44,6 +45,10 @@ export const router = createBrowserRouter([
             {
                 path: "/register",
                 element: <Register />
+            },
+            {
+                path: "/blog",
+                element: <Blog />
             }
 
 

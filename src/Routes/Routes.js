@@ -9,6 +9,7 @@ import Home from "../AllPage/Home/Home";
 import Login from "../AllPage/ShareFile/Login/Login";
 import Register from "../AllPage/ShareFile/Login/Register";
 import Main from "../Main/Main";
+import PrivetRouter from "./PrivetRouter";
 
 
 
@@ -33,7 +34,7 @@ export const router = createBrowserRouter([
             {
                 path: "/cours/:id",
                 loader: ({ params }) => fetch(`http://localhost:5000/cours/${params.id}`),
-                element: <Courses />
+                element: <PrivetRouter><Courses /></PrivetRouter>
             },
 
             {

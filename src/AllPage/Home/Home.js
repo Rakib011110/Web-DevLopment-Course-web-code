@@ -7,9 +7,9 @@ const Home = () => {
     const corses = useLoaderData()
     return (
         <div>
-            <h2> All Corse List {corses.length} </h2>
+            <h2 className='mb-4 bg-black rounded-3 p-2 text-light'> Web Devlopement Class {corses.length} </h2>
             {/* <p> {corse.name}</p> */}
-            <div className='row row-cols-2'>
+            <div className='row  row-cols-sm-1 row-cols-lg-2 shadow-sm'>
                 {
                     corses.map(corse => <CourseCard course={corse} key={corse._id}></CourseCard>)
 

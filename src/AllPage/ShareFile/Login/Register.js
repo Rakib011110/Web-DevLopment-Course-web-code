@@ -1,14 +1,16 @@
 import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 
 
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext)
+    const { createUser, profileUpdate } = useContext(AuthContext)
     const [errorMassage, setErrorMassage] = useState("")
+    const navigate = useNavigate()
 
     const handleRegisterSubmit = (e) => {
         e.preventDefault()
@@ -25,6 +27,8 @@ const Register = () => {
                 console.log(user)
                 form.reset()
                 setErrorMassage('')
+                navigate("/")
+                handleprofileUpdate(name, photoURL)
             })
             .catch(error => {
                 console.error(error)
@@ -32,6 +36,17 @@ const Register = () => {
 
             })
 
+    }
+
+    const handleprofileUpdate = (name, photoURL) => {
+
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+        profileUpdate(profile)
+            .then(() => { })
+            .catch(error => console.error(error));
     }
 
 

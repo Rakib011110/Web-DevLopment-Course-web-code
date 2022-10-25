@@ -9,7 +9,7 @@ import { FaDownload } from "react-icons/fa";
 
 const CourseCard = ({ course }) => {
     console.log(course)
-    const { title, _id, author, details, image_url, total_view } = course
+    const { title, _id, author, details, image_url } = course
     return (
         <div>
             <Card className="text-center mb-4">

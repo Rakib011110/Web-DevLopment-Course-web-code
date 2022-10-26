@@ -7,7 +7,7 @@ const CategoryList = () => {
 
     return (
         <div>
-            <h2> this is category {courses.length} </h2>
+            <h2>  </h2>
             {
                 courses.map(course => <CourseCard course={course} key={course._id} />)
             }

@@ -16,13 +16,13 @@ const Main = () => {
             <Container>
 
                 <Row >
-                    <Col className='d-none d-lg-block' sm={3}>
+                    <Col className='d-none d-lg-block' sm={0}>
 
-                        <CoursesList ></CoursesList>
+
 
                     </Col>
 
-                    <Col sm={9} >
+                    <Col sm={12} >
                         <Outlet></Outlet>
 
                     </Col >

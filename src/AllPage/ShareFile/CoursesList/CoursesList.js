@@ -16,10 +16,10 @@ const CoursesList = () => {
     return (
         <div  >
             {/* left side  */}
-            <h2> All Courses {categories.length}  </h2>
-            <div >
+            {/* <h2> All Courses {categories.length}  </h2> */}
+            <div className='bg-info bg-opacity-25 rounded-5  p-2'>
                 {
-                    categories.map(category => <h5 className='bg-black rounded-5 p-1' category={category} key={category.id} > <Link to={`/catergory/${category.id}`}>{category.name} </Link> </h5>)
+                    categories.map(category => <h5 className='bg-black text-light rounded-5 p-1' category={category} key={category.id} > <Link to={`/catergory/${category.id}`}>{category.name} </Link> </h5>)
                 }
 
             </div>

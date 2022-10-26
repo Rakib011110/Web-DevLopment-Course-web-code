@@ -12,18 +12,18 @@ const CourseCard = ({ course }) => {
     const { title, _id, author, details, image_url } = course
     return (
         <div>
-            <Card className="text-center mb-4">
+            <Card className="text-center mb-4 shadow-lg ">
                 <Card.Header>
                     <div className='d-flex justify-content-between'>
                         <Image
                             roundedCircle
                             className='me-2'
                             src={author?.img}
-                            style={{ height: '40px' }}
+                            style={{ height: '30px' }}
                         ></Image>
                         <div>
 
-                            <Button variant="outline-dark"><FaDownload /> Download Course</Button>
+                            <Button variant="outline-dark"><FaDownload /> Download</Button>
                         </div>
                     </div>
 

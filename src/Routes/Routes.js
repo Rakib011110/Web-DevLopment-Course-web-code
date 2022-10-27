@@ -6,6 +6,7 @@ import {
 import Blog from "../AllPage/Blog/Blog";
 import CategoryList from "../AllPage/CategoryList/CategoryList";
 import Courses from "../AllPage/Courses/Courses";
+import Faq from "../AllPage/Faq/Faq";
 import Home from "../AllPage/Home/Home";
 import Login from "../AllPage/ShareFile/Login/Login";
 import Register from "../AllPage/ShareFile/Login/Register";
@@ -47,6 +48,11 @@ export const router = createBrowserRouter([
             {
                 path: "/blog",
                 element: <Blog />
+            },
+
+            {
+                path: "/faq",
+                element: <Faq />
             }
 
 

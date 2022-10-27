@@ -1,4 +1,5 @@
 import React from 'react';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 const Faq = () => {
     return (
@@ -8,17 +9,10 @@ const Faq = () => {
 
                 <h2> Getting Started Web DevLopment Course</h2>
 
-                <h5>  This project was Web DevLopment Course [Web DevLopment Course](https://learn-web-development-project.firebaseapp.com/).</h5>
+                <h5>  This project was Web DevLopment Course <a href="https://learn-web-development-project.firebaseapp.com/"></a> .</h5>
 
 
                 <h4>   Which is in this project</h4>
-
-
-                <p>
-                    -There is a navbar in the project
-
-                </p>
-
                 <p>
                     -The navigation bar includes home page, All corse, blog, FAQ, dark and light button, and user profile ase.
 
@@ -32,27 +26,18 @@ const Faq = () => {
 
                 </p>
                 <h4> class name</h4>
-                <ul>
-
-                    <li> -HTML CLSS</li>
-                    <li> -CSS Class</li>
-
-                    <li>
-                        -Bootstrap class
-                    </li>
-                    <li>
-                        -Tailwind css class
-                    </li>
-                    <li>
-                        -JavaScript Class
-
-                    </li>
-                    <li>
-                        -React js class
-                    </li>
 
 
-                </ul>
+                <ListGroup variant="flush">
+                    <ListGroup.Item>-HTML CLSS</ListGroup.Item>
+                    <ListGroup.Item>CSS Class</ListGroup.Item>
+                    <ListGroup.Item>-Bootstrap class</ListGroup.Item>
+                    <ListGroup.Item>  -Tailwind css class</ListGroup.Item>
+                    <ListGroup.Item>JavaScript Class
+                    </ListGroup.Item>
+                    <ListGroup.Item>  -React js class</ListGroup.Item>
+                </ListGroup>
+
 
             </h4>
         </div>

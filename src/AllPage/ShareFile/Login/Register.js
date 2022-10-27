@@ -52,7 +52,7 @@ const Register = () => {
 
     return (
         <div>
-            <div>
+            <div className='w-50 bg-light bg-opacity-50 shadow-lg rounded-5 p-5'>
                 <Form onSubmit={handleRegisterSubmit}  >
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Your Name</Form.Label>

@@ -1,17 +1,38 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import Image from 'react-bootstrap/Image'
 import { FaDownload } from "react-icons/fa";
+import { useReactToPrint } from 'react-to-print'
+
 
 
 
 const CourseCard = ({ course }) => {
+
+
+
+
+
+
+
+
     console.log(course)
     const { title, _id, author, details, image_url } = course
+
+    const componentRef = useRef()
+    const handlePrint = useReactToPrint({
+        content: () => componentRef.current,
+        documentTitle: 'emp-data',
+        onAfterPrint: () => alert('success')
+    })
+
+
     return (
-        <div>
+
+
+        <div ref={componentRef}>
             <Card className="text-center mb-4 shadow-lg ">
                 <Card.Header>
                     <div className='d-flex justify-content-between'>
@@ -22,8 +43,7 @@ const CourseCard = ({ course }) => {
                             style={{ height: '30px' }}
                         ></Image>
                         <div>
-
-                            <Button variant="outline-dark"><FaDownload /> Download</Button>
+                            <Button onClick={handlePrint} variant="outline-dark"><FaDownload /> Download</Button>
                         </div>
                     </div>
 

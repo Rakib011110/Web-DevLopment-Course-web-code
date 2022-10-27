@@ -10,9 +10,8 @@ const Home = () => {
     const corses = useLoaderData()
     return (
         <div>
-            <h2 className='mb-4 bg-black rounded-3 p-2 text-light'> Web Devlopement Class {corses.length} </h2>
+            <h2 className='mb-4 bg-black rounded-3 p-2 text-light'> Web Devlopement Class  </h2>
             {/* <p> {corse.name}</p> */}
-
 
             <Row >
                 <Col className='d-none d-lg-block' sm={3}>
@@ -22,9 +21,7 @@ const Home = () => {
                 </Col>
 
                 <Col sm={9} >
-                    <div className='row  row-cols-sm-1 bg-black bg-opacity-25 p-1 row-cols-md-2 row-cols-lg-3 shadow-sm'>
-
-
+                    <div className='row  row-cols-sm-1 bg-light bg-opacity-100 p-2 row-cols-md-2 row-cols-lg-3 shadow-sm'>
 
                         {
                             corses.map(corse => <CourseCard course={corse} key={corse._id}></CourseCard>)

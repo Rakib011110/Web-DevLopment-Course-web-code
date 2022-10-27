@@ -22,19 +22,19 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: "/",
-                loader: () => fetch('http://localhost:5000/course'),
+                loader: () => fetch('https://assignment-10-serversite-rakib011110.vercel.app/course'),
                 element: <Home></Home>
             },
 
             {
                 path: "/catergory/:id",
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`),
+                loader: ({ params }) => fetch(`https://assignment-10-serversite-rakib011110.vercel.app/category/${params.id}`),
                 element: <CategoryList />
 
             },
             {
                 path: "/cours/:id",
-                loader: ({ params }) => fetch(`http://localhost:5000/cours/${params.id}`),
+                loader: ({ params }) => fetch(`https://assignment-10-serversite-rakib011110.vercel.app/cours/${params.id}`),
                 element: <PrivetRouter><Courses /></PrivetRouter>
             },
 

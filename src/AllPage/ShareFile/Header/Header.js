@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/esm/Button';
 import Image from 'react-bootstrap/esm/Image';
@@ -9,11 +9,19 @@ import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 import CoursesList from '../CoursesList/CoursesList';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Tooltip from 'react-bootstrap/Tooltip';
+import "./Header.css"
+
+
+
+
 
 
 
 const Header = () => {
     const { user, signout } = useContext(AuthContext)
+    const [darkMode, setDarkMode] = useState(false)
 
 
     const hanldeSignOut = () => {
@@ -36,15 +44,21 @@ const Header = () => {
                             <Nav.Link as={Link} to="/" >All Course</Nav.Link>
                             <Nav.Link as={Link} to="/blog" > Blog </Nav.Link>
                             <Nav.Link href="#pricing"> Faq </Nav.Link>
-                            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Faq</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">
-                                    Another action
-                                </NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                                <NavDropdown.Divider />
 
-                            </NavDropdown>
+
+                            <div >
+                                {/* <div className="container">
+                                    <span  style={{ color: darkMode ? "grey" : "yellow" }}>☀︎</span>
+                                    <div className="switch-checkbox">
+                                        <label className="switch">
+                                            <input type="checkbox" onChange={() => setDarkMode(!darkMode)} />
+                                            <span className="slider round"> </span>
+                                        </label>
+                                    </div>
+                                    <span style={{ color: darkMode ? "#c96dfd" : "grey" }}>☽</span>
+                                </div> */}
+                            </div>
+
                         </Nav>
                         <Nav>
                             <Nav.Link href="#deets">
@@ -54,7 +68,32 @@ const Header = () => {
 
 
                                             <Button className='me-2' onClick={hanldeSignOut} variant="outline-light" >Log out</Button>
-                                            <span>{user?.displayName}</span>
+
+                                            <OverlayTrigger
+                                                placement="bottom"
+                                                overlay={<Tooltip id="button-tooltip-2">{user.displayName}</Tooltip>}
+                                            >
+                                                {({ ref, ...triggerHandler }) => (
+                                                    <div
+                                                        variant="light"
+                                                        {...triggerHandler}
+                                                        className="d-inline-flex align-items-center"
+                                                    >
+                                                        <Image
+                                                            ref={ref}
+
+                                                        />
+                                                        <span className="ms-1">
+
+
+                                                            <span>{user?.displayName}</span>
+
+                                                        </span>
+                                                    </div>
+                                                )}
+                                            </OverlayTrigger>
+
+
                                         </>
                                         :
                                         <>

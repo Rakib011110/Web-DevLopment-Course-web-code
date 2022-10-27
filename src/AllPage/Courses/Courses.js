@@ -63,7 +63,17 @@ const Courses = () => {
 
 
                 <Accordion className='shadow-lg rounded-2' defaultActiveKey="0" flush>
+
+                    <Accordion.Item eventKey="7">
+                        <Accordion.Header> <h2>More </h2>  </Accordion.Header>
+                        <Accordion.Body>
+                            <h5> {details} </h5>
+                        </Accordion.Body>
+                    </Accordion.Item>
                     <Accordion.Item eventKey="0">
+
+
+
                         <Accordion.Header> <h3> {quesion1}</h3> </Accordion.Header>
                         <Accordion.Body>
                             <h5>   {ans1} </h5>
@@ -87,19 +97,25 @@ const Courses = () => {
                             <h5> {ans3}</h5>
                         </Accordion.Body>
                     </Accordion.Item>
-                    <Accordion.Item eventKey="3">
+                    <Accordion.Item eventKey="4">
                         <Accordion.Header> <h2>{quesion4}</h2>  </Accordion.Header>
                         <Accordion.Body>
                             <h5> {ans4}</h5>
                         </Accordion.Body>
                     </Accordion.Item>
-                    <Accordion.Item eventKey="3">
+                    <Accordion.Item eventKey="5">
                         <Accordion.Header> <h2>{quesion5}</h2>  </Accordion.Header>
                         <Accordion.Body>
                             <h5> {ans5}</h5>
                         </Accordion.Body>
                     </Accordion.Item>
-                    <Accordion.Item eventKey="3">
+                    <Accordion.Item eventKey="6">
+                        <Accordion.Header> <h2>{quesion6}</h2>  </Accordion.Header>
+                        <Accordion.Body>
+                            <h5> {ans6}</h5>
+                        </Accordion.Body>
+                    </Accordion.Item>
+                    <Accordion.Item eventKey="7">
                         <Accordion.Header> <h2>{quesion6}</h2>  </Accordion.Header>
                         <Accordion.Body>
                             <h5> {ans6}</h5>

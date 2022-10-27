@@ -43,7 +43,7 @@ const CourseCard = ({ course }) => {
                             style={{ height: '30px' }}
                         ></Image>
                         <div>
-                            <Button onClick={handlePrint} variant="outline-dark"><FaDownload /> Download</Button>
+                            <Button className='' onClick={handlePrint} variant="outline-dark"><  FaDownload /> Download</Button>
                         </div>
                     </div>
 
@@ -56,9 +56,9 @@ const CourseCard = ({ course }) => {
                     <Card.Text>
                         {
                             details.length > 100 ?
-                                <p>{details.slice(0, 50)}+"..."<Link to={`/cours/${_id}`}> Read More</Link>  </p>
+                                <p>{details.slice(0, 50)}...<Link to={`/cours/${_id}`}> Read More</Link>  </p>
                                 :
-                                <button><Link to={`/cours/${_id}`}> Read More</Link></button>
+                                <button></button>
                         }
                     </Card.Text>
                     <Button variant="dark"><Link to={`/cours/${_id}`}> Learn More</Link></Button>

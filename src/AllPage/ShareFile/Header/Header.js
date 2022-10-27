@@ -11,7 +11,7 @@ import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 import CoursesList from '../CoursesList/CoursesList';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
-// import "./Header.css"
+import "./Header.css"
 
 
 
@@ -46,18 +46,7 @@ const Header = () => {
                             <Nav.Link as={Link} to="/faq" href="#pricing">FAQ </Nav.Link>
 
 
-                            <div >
-                                {/* <div className="container">
-                                    <span  style={{ color: darkMode ? "grey" : "yellow" }}>☀︎</span>
-                                    <div className="switch-checkbox">
-                                        <label className="switch">
-                                            <input type="checkbox" onChange={() => setDarkMode(!darkMode)} />
-                                            <span className="slider round"> </span>
-                                        </label>
-                                    </div>
-                                    <span style={{ color: darkMode ? "#c96dfd" : "grey" }}>☽</span>
-                                </div> */}
-                            </div>
+
 
                         </Nav>
                         <Nav>
@@ -159,30 +148,30 @@ const Header = () => {
 
 
                             </Nav.Link>
-                            {/* <Nav.Link eventKey={2} >
 
-                                {user?.photoURL ?
-                                    <Image
-                                        style={{ height: '30px' }}
-                                        roundedCircle
-                                        src={user?.photoURL}>
-                                    </Image>
-
-
-
-
-
-                                    : <FaUser></FaUser>
-                                }
-
-
-                            </Nav.Link> */}
                         </Nav>
                         <div className="d-lg-none">
 
                             <CoursesList></CoursesList>
                         </div>
+
+
+                        <div >
+                            <div className="container w-25 ">
+                                <span className='fs-5' style={{ color: darkMode ? "grey" : "yellow" }}>☀︎</span>
+                                <div className="switch-checkbox">
+                                    <label className="switch fs-4 ">
+                                        <input type="checkbox" onChange={() => setDarkMode(!darkMode)} />
+                                        <span className="slider round "> </span>
+                                    </label>
+                                </div>
+                                <span style={{ color: darkMode ? "#c96dfd" : "grey" }}>☽</span>
+                            </div>
+                        </div>
                     </Navbar.Collapse>
+
+
+
                 </Container>
 
 

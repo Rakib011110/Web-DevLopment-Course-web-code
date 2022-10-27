@@ -56,7 +56,7 @@ const CourseCard = ({ course }) => {
                     <Card.Text>
                         {
                             details.length > 100 ?
-                                <p>{details.slice(0, 100)}+"..."<Link to={`/cours/${_id}`}> Read More</Link>  </p>
+                                <p>{details.slice(0, 50)}+"..."<Link to={`/cours/${_id}`}> Read More</Link>  </p>
                                 :
                                 <button><Link to={`/cours/${_id}`}> Read More</Link></button>
                         }

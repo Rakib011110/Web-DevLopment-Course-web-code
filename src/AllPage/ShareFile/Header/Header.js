@@ -11,7 +11,7 @@ import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 import CoursesList from '../CoursesList/CoursesList';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
-import "./Header.css"
+// import "./Header.css"
 
 
 
@@ -43,7 +43,7 @@ const Header = () => {
                         <Nav className="me-auto">
                             <Nav.Link as={Link} to="/" >All Course</Nav.Link>
                             <Nav.Link as={Link} to="/blog" > Blog </Nav.Link>
-                            <Nav.Link href="#pricing"> Faq </Nav.Link>
+                            <Nav.Link href="#pricing">FAQ </Nav.Link>
 
 
                             <div >
@@ -71,7 +71,7 @@ const Header = () => {
 
                                             <OverlayTrigger
                                                 placement="bottom"
-                                                overlay={<Tooltip id="button-tooltip-2">{user.displayName}</Tooltip>}
+                                                overlay={<Tooltip id="button-tooltip-2"></Tooltip>}
                                             >
                                                 {({ ref, ...triggerHandler }) => (
                                                     <div
@@ -86,7 +86,7 @@ const Header = () => {
                                                         <span className="ms-1">
 
 
-                                                            <span>{user?.displayName}</span>
+                                                            <span className='fs-5 '>{user?.displayName}</span>
 
                                                         </span>
                                                     </div>
@@ -108,8 +108,58 @@ const Header = () => {
                                         </>
                                 }
 
+
+
+
+
+
+
+
+
+
+                                <OverlayTrigger
+                                    placement="bottom"
+                                    overlay={<Tooltip id="button-tooltip-2">{user?.displayName}</Tooltip>}
+                                >
+                                    {({ ref, ...triggerHandler }) => (
+                                        <div
+                                            variant="light"
+                                            {...triggerHandler}
+                                            className="d-inline-flex align-items-center"
+                                        >
+                                            <Image
+                                                ref={ref}
+
+                                            />
+                                            <span className="ms-1"> <Nav.Link eventKey={2} >
+
+                                                {user?.photoURL ?
+                                                    <Image
+                                                        style={{ height: '30px' }}
+                                                        roundedCircle
+                                                        src={user?.photoURL}>
+                                                    </Image>
+
+
+
+
+
+                                                    : <FaUser></FaUser>
+                                                }
+
+
+                                            </Nav.Link></span>
+                                        </div>
+                                    )}
+                                </OverlayTrigger>
+
+
+
+
+
+
                             </Nav.Link>
-                            <Nav.Link eventKey={2} >
+                            {/* <Nav.Link eventKey={2} >
 
                                 {user?.photoURL ?
                                     <Image
@@ -117,11 +167,16 @@ const Header = () => {
                                         roundedCircle
                                         src={user?.photoURL}>
                                     </Image>
+
+
+
+
+
                                     : <FaUser></FaUser>
                                 }
 
 
-                            </Nav.Link>
+                            </Nav.Link> */}
                         </Nav>
                         <div className="d-lg-none">
 

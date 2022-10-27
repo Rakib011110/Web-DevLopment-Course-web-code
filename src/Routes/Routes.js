@@ -13,8 +13,6 @@ import Main from "../Main/Main";
 import PrivetRouter from "./PrivetRouter";
 
 
-
-
 export const router = createBrowserRouter([
     {
         path: "/",

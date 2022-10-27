@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container';
 
 
 import { Outlet } from 'react-router-dom';
-import CoursesList from '../AllPage/ShareFile/CoursesList/CoursesList';
+// import CoursesList from '../AllPage/ShareFile/CoursesList/CoursesList';
 import Header from '../AllPage/ShareFile/Header/Header';
 import Footer from '../AllPage/ShareFile/Footer/Footer';
 

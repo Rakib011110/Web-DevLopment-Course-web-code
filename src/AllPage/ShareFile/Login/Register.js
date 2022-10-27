@@ -95,7 +95,7 @@ const Register = () => {
 
     return (
         <div>
-            <div className='w-50 bg-light bg-opacity-50 shadow-lg rounded-5 p-5'>
+            <div className=' bg-light bg-opacity-50 shadow-lg rounded-5 p-5'>
                 <Form onSubmit={handleRegisterSubmit}  >
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Your Name</Form.Label>
@@ -130,8 +130,8 @@ const Register = () => {
 
                         <ButtonGroup className=' ' vertical>
                             <div className=' d-flex gap-2 mt-3'>
-                                <Button onClick={handleGoogleSignIn} variant="outline-primary"><FaGoogle /> Login with Google</Button>
-                                <Button onClick={handleGitHubSignIn} className='text-primary' variant="outline-dark"><FaGithub /> Login with Github</Button>
+                                <Button onClick={handleGoogleSignIn} variant="outline-primary"><FaGoogle />Google</Button>
+                                <Button onClick={handleGitHubSignIn} className='text-primary' variant="outline-dark"><FaGithub /> Github</Button>
                             </div>
                         </ButtonGroup>
 

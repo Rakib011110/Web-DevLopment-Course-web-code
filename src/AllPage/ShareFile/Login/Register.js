@@ -1,16 +1,59 @@
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
+import ButtonGroup from 'react-bootstrap/esm/ButtonGroup';
 import Form from 'react-bootstrap/Form';
-import { useNavigate } from 'react-router-dom';
+import { FaGithub, FaGoogle } from 'react-icons/fa';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 
 
 
 const Register = () => {
-    const { createUser, profileUpdate } = useContext(AuthContext)
+    const { createUser, profileUpdate, providerLogin, githublogin } = useContext(AuthContext)
     const [errorMassage, setErrorMassage] = useState("")
     const navigate = useNavigate()
+    const location = useLocation()
+
+    const provider = new GoogleAuthProvider()
+    const githubProvider = new GithubAuthProvider()
+
+    const from = location.state?.from?.pathname || '/';
+
+
+
+
+
+    const handleGoogleSignIn = () => {
+        providerLogin(provider)
+            .then(result => {
+                const user = result.user
+                console.log(user)
+                navigate(from, { replace: true })
+            })
+            .catch(error => console.error(error))
+    }
+
+
+
+    const handleGitHubSignIn = () => {
+        githublogin(githubProvider)
+            .then(result => {
+                const user = result.user
+                console.log(user)
+                navigate(from, { replace: true })
+            })
+            .catch(error => console.error(error))
+    }
+
+
+
+
+
+
+
+
 
     const handleRegisterSubmit = (e) => {
         e.preventDefault()
@@ -79,6 +122,29 @@ const Register = () => {
                     <Form.Text className="text-danger">
                         {errorMassage}
                     </Form.Text>
+
+
+
+
+                    <div className=''>
+
+                        <ButtonGroup className=' ' vertical>
+                            <div className=' d-flex gap-2 mt-3'>
+                                <Button onClick={handleGoogleSignIn} variant="outline-primary"><FaGoogle /> Login with Google</Button>
+                                <Button onClick={handleGitHubSignIn} className='text-primary' variant="outline-dark"><FaGithub /> Login with Github</Button>
+                            </div>
+                        </ButtonGroup>
+
+
+
+
+
+                    </div>
+
+
+
+
+
                 </Form>
             </div>
         </div>
